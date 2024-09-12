@@ -27,34 +27,32 @@ def move_no_button(event):
     # Temporarily disable the 'No' button to prevent clicks during movement
     no_button.config(state=tk.DISABLED)
     
-    # Get the dimensions of the button and its parent frame
     button_width = no_button.winfo_width()
     button_height = no_button.winfo_height()
     frame_width = button_frame.winfo_width()
     frame_height = button_frame.winfo_height()
     
-    # Get the dimensions and position of the 'Yes' button
+
     yes_x = yes_button.winfo_x()
     yes_y = yes_button.winfo_y()
     yes_width = yes_button.winfo_width()
     yes_height = yes_button.winfo_height()
     
     while True:
-        # Generate a new random position
+    
         new_x = random.randint(0, frame_width - button_width)
         new_y = random.randint(0, frame_height - button_height)
         
-        # Check if the new position overlaps with the 'Yes' button
+    
         if (not (new_x + button_width < yes_x or new_x > yes_x + yes_width or
                  new_y + button_height < yes_y or new_y > yes_y + yes_height)):
             # If overlapping, continue to generate a new position
             continue
         
-        # Move the 'No' button to the new position
+
         no_button.place(x=new_x, y=new_y)
         break
     
-    # Re-enable the 'No' button after a short delay
     root.after(200, lambda: no_button.config(state=tk.NORMAL))
 
 def open_second_window():

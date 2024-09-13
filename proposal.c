@@ -81,7 +81,7 @@ def open_second_window():
     no_button.bind("<Button-1>", move_no_button)
 
     # Start the typing effect
-    message = ("Hey Rose💖,\n\n"
+    message = ("Hey Rose,\n\n"
                "I’ve been thinking about you a lot lately...\n\n"
                "You make me smile like no one else can.\n\n"
                "Would you do me the honor of being my girlfriend?\n\n"
